@@ -14,36 +14,43 @@ const SEASON_MONTH = [
 // --- DATABASE DELLE COLTURE ---
 const CROP_DB = {
     'Mais': {
+        // Mais da granella (rif. Pianura Padana)
+        // Alta resa, altissimo fabbisogno idrico estivo
         optimalTemp: 28,
-        tempTollerance: 3,
-        waterReq: 180, // mm/mese
-        baseYield: 15, // t/ha
-        price: 210,    // €/t
-        waterStressFactor: 0.4
+        tempTollerance: 4,
+        waterReq: 160, // mm/mese nei mesi di picco (Luglio)
+        baseYield: 13.5, // t/ha (Resa media intensiva)
+        price: 225,    // €/t (Prezzo medio di mercato)
+        waterStressFactor: 0.5 // Soffre molto la siccità
     },
     'Grano': {
+        // Grano Tenero
+        // Resa media, soffre il caldo eccessivo
         optimalTemp: 22,
-        tempTollerance: 4,
-        waterReq: 120, // meno esigente
-        baseYield: 8, // resa più bassa del mais
-        price: 280,    // prezzo più alto
+        tempTollerance: 5,
+        waterReq: 90, // Fabbisogno moderato
+        baseYield: 7.5, // t/ha
+        price: 260,    // €/t
         waterStressFactor: 0.3
     },
     'Orzo': {
+        // Coltura rustica, adatta a terreni meno fertili
         optimalTemp: 20,
-        tempTollerance: 5,
-        waterReq: 100, // resistente
-        baseYield: 7,
-        price: 240,
-        waterStressFactor: 0.25
+        tempTollerance: 6,
+        waterReq: 80,
+        baseYield: 6.0,
+        price: 215,
+        waterStressFactor: 0.2
     },
     'Riso': {
-        optimalTemp: 25,
-        tempTollerance: 2,
-        waterReq: 250, // molto esigente (acqua!)
-        baseYield: 10, 
-        price: 350,    // alto valore
-        waterStressFactor: 0.6 // soffre molto la siccità
+        // Riso (rif. Vercelli/Pavia)
+        // Altissimo valore, dipendenza totale dall'acqua
+        optimalTemp: 26,
+        tempTollerance: 3,
+        waterReq: 220, // Altissimo, molto esigente (sommersione/irrigazione continua)
+        baseYield: 8.0, // t/ha
+        price: 480,    // alto valore di mercato
+        waterStressFactor: 0.7 // soffre molto la siccità
     }
 }
 

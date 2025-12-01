@@ -1,15 +1,24 @@
 import { BarChart, Bar, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
 
-export default function FinancialChart({ data }) {
+export default function FinancialChart({ data, isDarkMode }) {
+
+    // Colori dinamici
+    const axisColor = isDarkMode ? '#9CA3AF' : '#374151'; 
+    const gridColor = isDarkMode ? '#374151' : '#e5e7eb';
+    const tooltipStyle = {
+        backgroundColor: isDarkMode ? '#1F2937' : '#FFFFFF',
+        borderColor: isDarkMode ? '#374151' : '#ccc',
+        color: isDarkMode ? '#F3F4F6' : '#111827'
+    };
 
     return (
         <>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-700 mb-4 flex items-center">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
                     Analisi Finanziaria Mensile (€)
                 </h3>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                     Confronto tra Costi Operativi (Cop) e Margine di Profitto Lordo (MPL).
                 </p>
 
@@ -21,23 +30,23 @@ export default function FinancialChart({ data }) {
                     >
 
                         {/* Griglia di sfondo */}
-                        <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false}/>
+                        <CartesianGrid strokeDasharray="3 3" stroke={gridColor} vertical={false}/>
 
                         {/* Asse X: Mese */}
-                        <XAxis dataKey="name" stroke="#333"/>
+                        <XAxis dataKey="name" stroke={axisColor} tick={{ fill: axisColor }}/>
 
                         {/* Asse Y: Valore in Euro */}
                         <YAxis 
-                            stroke="#333"
-                            label={{ value: 'Valore (€)', angle: -90, position: 'insideLeft', fill: '#333', dx: -10}}
+                            stroke={axisColor}
+                            tick={{ fill: axisColor }}
+                            label={{ value: 'Valore (€)', angle: -90, position: 'insideLeft', fill: axisColor, dx: -20}}
                             // formatta le etichette per mostrare il simbolo dell'euro €
                             tickFormatter={(value) => `€${value.toFixed(0)}`}
                         />
 
                         <Tooltip 
+                            contentStyle={tooltipStyle}
                             formatter={(value, name) => [`€${value.toFixed(2)}`, name]}
-                            labelStyle={{ color: '#333', fontWeight: 'bold' }}
-                            wrapperStyle={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px' }}
                         />
 
                         <Legend wrapperStyle={{ paddingTop: '20px' }}/>
