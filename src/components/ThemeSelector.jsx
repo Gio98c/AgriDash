@@ -74,7 +74,7 @@ export default function ThemeSelector() {
 
                 {isOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-100">
-                        <div className="p-1">
+                        <div className="p-1.5 flex flex-col gap-1.5">
                             {options.map((option) => (
                                 <button
                                     key={option.value}
