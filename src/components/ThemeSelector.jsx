@@ -22,13 +22,13 @@ export default function ThemeSelector() {
     // Effetto principale: applicare il tema al documento HTML
     useEffect(() => {
         const root = document.documentElement;
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');   // Qui andiamo a prendere la preferenza del colore 'Dark'
 
         function applyTheme() {
             if (theme === 'dark') { root.classList.add('dark'); }
             else if (theme === 'light') { root.classList.remove('dark'); }
             else { 
-                // logia per system (tema come il sistema)
+                // logica per system (tema come il sistema)
                 if (mediaQuery.matches) { root.classList.add('dark'); }
                 else { root.classList.remove('dark'); }
             }

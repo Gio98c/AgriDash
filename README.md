@@ -44,8 +44,8 @@ This dashboard serves as a Decision Support System (DSS) prototype, demonstratin
 
 ## 👤 Author
 
-**Created by:** [Il Tuo Nome]
+**Created by:** [Giovanni Russo]
 **Course:** Informatica per le Aziende Digitali (L-31)
-**Project Work:** PW n.8 - Development of a JavaScript Dashboard for Primary Sector Performance Analysis.
+**Project Work:** Project Work - Development of a JavaScript Dashboard for Primary Sector Performance Analysis.
 
 *Generated for academic purposes as part of the thesis project.*
