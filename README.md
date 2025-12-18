@@ -32,6 +32,43 @@ This dashboard serves as a Decision Support System (DSS) prototype, demonstratin
 
 * **Data Table:** Detailed monthly breakdown of all simulated metrics.
 
+## 🛠️ Installation & Execution Guide
+
+To compile and run the project locally on your computer, follow the steps below:
+
+### Prerequisites
+
+*   **Node.js** (version 16.0.0 or higher recommended)
+    
+*   **npm** (usually installed along with Node.js)
+    
+
+### 1\. Environment Preparation
+
+Once the project folder is downloaded, open the terminal or command prompt inside the main directory (where the package.json file is located).
+
+### 2\. Install Dependencies
+
+Run the following command to download all necessary libraries (React, Tailwind CSS, Recharts, Lucide-React):
+
+`  npm install   `
+
+### 3\. Run in Development Mode
+
+To start the application locally and see changes in real-time:
+
+`   npm run dev   `
+
+After starting, the terminal will indicate a local address (usually http://localhost:5173). Copy the address into your browser to view the dashboard.
+
+### 4\. Build for Production
+
+If you wish to generate optimized files for publication on a web server:
+
+`   npm run build   `
+
+This command will create a folder named dist/ containing the static files (.html, .js, .css) ready for deployment.
+
 ## 🛠️ Technologies Used
 
 * **Frontend Framework:** React (Vite)
